@@ -3,6 +3,7 @@ import Link from "next/link";
 const nav = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/work", label: "Work" },
 ] as const;
 
 export function Header() {

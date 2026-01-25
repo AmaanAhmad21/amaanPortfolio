@@ -17,8 +17,8 @@ const ibmPlexSans = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Amaan",
-  description: "Personal portfolio",
+  title: "Amaan Ahmad",
+  description: "Computer Science at Western. AI, data, systems.",
 };
 
 export default function RootLayout({
