@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #0a0a0b;
+    --surface: #141416;
+    --text: #e4e4e5;
+    --text-muted: #71717a;
+    --accent: #a78bfa;
+    --accent-muted: #7c3aed;
+  }
+
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-[var(--bg)] text-[var(--text)];
+  }
+}
