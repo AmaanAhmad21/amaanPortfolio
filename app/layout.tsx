@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, IBM_Plex_Sans } from "next/font/google";
+import { Bebas_Neue, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
-const instrumentSerif = Instrument_Serif({
+const bebasNeue = Bebas_Neue({
   weight: "400",
   variable: "--font-heading",
   subsets: ["latin"],
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${instrumentSerif.variable} ${ibmPlexSans.variable}`}>
+    <html lang="en" className={`${bebasNeue.variable} ${ibmPlexSans.variable}`}>
       <body className="font-body min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>
