@@ -6,7 +6,7 @@ import { LightningBackground } from "@/components/home/LightningBackground";
 import { LightningBolt } from "@/components/home/LightningBolt";
 import { ContactIcons } from "@/components/home/ContactIcons";
 
-type Strike = { href: string; x: number } | null;
+type Strike = { href: string; x: number; y: number } | null;
 
 const nav = [
   { href: "/", label: "Home" },
@@ -24,8 +24,9 @@ export default function Home() {
       if (href === "/") return; // Don't navigate if already home
       e.preventDefault();
       const rect = e.currentTarget.getBoundingClientRect();
-      const x = rect.left + rect.width / 2;
-      setStrike({ href, x });
+      const x = (rect.left + rect.width / 2) / window.innerWidth * 100;
+      const y = (rect.top + rect.height / 2) / window.innerHeight * 100;
+      setStrike({ href, x, y });
       setFlash(true);
       setTimeout(() => setFlash(false), 520);
       setTimeout(() => {
@@ -48,10 +49,19 @@ export default function Home() {
         />
       )}
 
-      <LightningBolt x={strike?.x ?? 0} visible={strike !== null} />
+      <LightningBolt targetX={strike?.x ?? 50} targetY={strike?.y ?? 50} visible={strike !== null} />
 
-      {/* Border frame */}
-      <div className="absolute inset-4 md:inset-8 border border-[var(--border)] z-10">
+      {/* Border frame - path with gap at bottom center for AZA (seamless, no box) */}
+      <div className="absolute inset-4 md:inset-8 z-10">
+        <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path
+            d="M 0 0 L 100 0 L 100 100 L 58 100 M 42 100 L 0 100 Z"
+            fill="none"
+            stroke="var(--border)"
+            strokeWidth="1"
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
         {/* Top-left: Name + Nav */}
         <div className="absolute top-8 md:top-12 left-6 md:left-10">
           <h1 className="font-heading text-4xl md:text-5xl text-[var(--text)] mb-4 animate-fade-in tracking-wide">
@@ -87,8 +97,8 @@ export default function Home() {
           <ContactIcons />
         </div>
 
-        {/* AZA integrated into bottom-center border */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 flex items-center bg-[var(--bg)] px-3">
+        {/* AZA in the gap (no box - seamless) */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 flex items-center">
           <span className="text-base md:text-lg font-heading tracking-[0.4em] text-[var(--text-muted)]">
             AZA
           </span>

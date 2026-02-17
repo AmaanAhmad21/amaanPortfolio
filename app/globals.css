@@ -4,19 +4,23 @@
 
 @layer base {
   :root {
-    /* Night sky */
-    --bg: #0a0b12;
-    --bg-sky: #0d0f1a;
-    --surface: #141824;
+    /* Night sky / space */
+    --bg: #05060c;
+    --bg-sky: #080a14;
+    --bg-deep: #030408;
+    --surface: #0e1018;
     --text: #e8e9ed;
     --text-muted: #8b8fa3;
     --accent: #a78bfa;
     --accent-muted: #7c3aed;
     /* Lightning */
     --lightning: #e8f0ff;
-    --lightning-dim: rgba(200, 220, 255, 0.15);
+    --lightning-dim: rgba(200, 220, 255, 0.12);
     --flash: rgba(255, 255, 255, 0.9);
     --border: rgba(255, 255, 255, 0.08);
+    /* Space tint */
+    --space-mid: rgba(30, 25, 55, 0.4);
+    --space-top: rgba(15, 12, 35, 0.6);
   }
 
   html {

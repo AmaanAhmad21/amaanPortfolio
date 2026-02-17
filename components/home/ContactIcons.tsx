@@ -34,13 +34,18 @@ export function ContactIcons() {
   return (
     <div className="flex flex-col items-end gap-4" aria-label="Contact">
       {/* Above: Email text, click to copy */}
-      <button
-        type="button"
-        onClick={copyEmail}
-        className="text-base md:text-lg font-body tracking-wide text-[var(--text-muted)] hover:text-[var(--lightning)] transition-colors cursor-pointer"
-      >
-        {copied ? "Copied!" : EMAIL}
-      </button>
+      <div className="flex flex-col items-end gap-1">
+        {copied && (
+          <span className="text-xs font-body text-[var(--lightning)]">Copied!</span>
+        )}
+        <button
+          type="button"
+          onClick={copyEmail}
+          className="text-base md:text-lg font-body tracking-wide text-[var(--text-muted)] hover:text-[var(--lightning)] transition-colors cursor-pointer"
+        >
+          {EMAIL}
+        </button>
+      </div>
 
       {/* Below: Email logo, LinkedIn logo, GitHub logo */}
       <div className="flex gap-6">
