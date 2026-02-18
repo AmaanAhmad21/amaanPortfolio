@@ -57,8 +57,9 @@ export function PortfolioFrame({ children }: PortfolioFrameProps) {
 
       <div className="absolute inset-4 md:inset-8 z-10 flex flex-col">
         <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
+          {/* Left edge at x=0.5 so 1px stroke isn't clipped; rest of border on the frame edge */}
           <path
-            d="M 0 0 L 100 0 L 100 100 L 58 100 M 42 100 L 0 100 Z"
+            d="M 0.5 0 L 100 0 L 100 100 L 58 100 M 42 100 L 0.5 100 L 0.5 0"
             fill="none"
             stroke="var(--border-frame)"
             strokeWidth="1"
