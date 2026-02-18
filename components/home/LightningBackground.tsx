@@ -1,6 +1,5 @@
 "use client";
 
-import { BlackHole } from "./BlackHole";
 
 export function LightningBackground() {
   return (
@@ -210,7 +209,6 @@ export function LightningBackground() {
           backgroundRepeat: "no-repeat",
         }}
       />
-      <BlackHole />
     </>
   );
 }

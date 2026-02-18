@@ -37,9 +37,9 @@ const config: Config = {
           "100%": { opacity: "0" },
         },
         lightningDraw: {
-          "0%": { strokeDashoffset: 1 },
-          "60%": { strokeDashoffset: 0 },
-          "100%": { strokeDashoffset: 0 },
+          "0%": { strokeDashoffset: "1" },
+          "60%": { strokeDashoffset: "0" },
+          "100%": { strokeDashoffset: "0" },
         },
         screenFlash: {
           "0%": { opacity: "0" },
@@ -50,6 +50,17 @@ const config: Config = {
         speedBlur: {
           "0%": { backgroundPosition: "200% 50%" },
           "100%": { backgroundPosition: "-200% 50%" },
+        },
+        electricGlow: {
+          "0%, 100%": { opacity: "0.6", filter: "brightness(1)" },
+          "50%": { opacity: "1", filter: "brightness(1.15)" },
+        },
+        electricFlicker: {
+          "0%, 90%, 100%": { opacity: "1" },
+          "92%": { opacity: "0.85" },
+          "94%": { opacity: "1" },
+          "96%": { opacity: "0.9" },
+          "98%": { opacity: "1" },
         },
         spinSlow: {
           "0%": { transform: "rotate(0deg)" },
@@ -63,6 +74,8 @@ const config: Config = {
         "lightning-draw": "lightningDraw 0.45s ease-out forwards",
         "screen-flash": "screenFlash 0.5s ease-out forwards",
         "speed-blur": "speedBlur 2s linear infinite",
+        "electric-glow": "electricGlow 2.5s ease-in-out infinite",
+        "electric-flicker": "electricFlicker 3s ease-in-out infinite",
         "spin-slow": "spinSlow 55s linear infinite",
       },
     },

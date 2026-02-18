@@ -1,24 +1,25 @@
+"use client";
+
+import { PortfolioFrame } from "@/components/layout/PortfolioFrame";
+
 export default function About() {
   return (
-    <div className="mx-auto max-w-4xl px-6 py-24">
-      <h1 className="font-heading text-5xl md:text-6xl tracking-wide text-[var(--text)] mb-12">
+    <PortfolioFrame>
+      <h2 className="font-heading text-2xl md:text-3xl tracking-wide text-[var(--text)] mb-8">
         About
-      </h1>
-
-      <div className="space-y-12 max-w-2xl">
+      </h2>
+      <div className="space-y-10 max-w-2xl">
         <p className="text-lg md:text-xl text-[var(--text-muted)] leading-relaxed">
           I’m a Computer Science student at Western, focused on AI, data systems, and building things that scale. I’ve worked on agentic AI and data wrangling at a startup, and on security and productivity tools in enterprise. I like clean systems and shipping.
         </p>
-
         <div>
-          <h2 className="font-heading text-xl md:text-2xl tracking-wide text-[var(--text)] mb-2">Education</h2>
+          <h3 className="font-heading text-lg md:text-xl tracking-wide text-[var(--text)] mb-2">Education</h3>
           <p className="text-base md:text-lg text-[var(--text-muted)]">
             B.Sc Computer Science, Minor in Software Engineering — University of Western Ontario, 2022–2026. London, ON.
           </p>
         </div>
-
         <div>
-          <h2 className="font-heading text-xl md:text-2xl tracking-wide text-[var(--text)] mb-3">Skills</h2>
+          <h3 className="font-heading text-lg md:text-xl tracking-wide text-[var(--text)] mb-3">Skills</h3>
           <ul className="text-base md:text-lg text-[var(--text-muted)] space-y-2">
             <li><span className="text-[var(--text)]/80">Code:</span> Python, Java, C, C++, SQL, Flask, Angular, REST, Git</li>
             <li><span className="text-[var(--text)]/80">AI & data:</span> LLMs, OpenAI Agents, Hugging Face, ETL, BigQuery, prompt engineering</li>
@@ -26,6 +27,6 @@ export default function About() {
           </ul>
         </div>
       </div>
-    </div>
+    </PortfolioFrame>
   );
 }

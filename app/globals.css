@@ -18,6 +18,7 @@
     --lightning-dim: rgba(200, 220, 255, 0.12);
     --flash: rgba(255, 255, 255, 0.9);
     --border: rgba(255, 255, 255, 0.08);
+    --border-frame: rgba(255, 255, 255, 0.14);
     /* Space tint */
     --space-mid: rgba(30, 25, 55, 0.4);
     --space-top: rgba(15, 12, 35, 0.6);
@@ -30,4 +31,23 @@
   body {
     @apply bg-[var(--bg)] text-[var(--text)];
   }
+}
+
+/* Frame scrollbar: thin, matches border vibe */
+.scrollbar-frame {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+.scrollbar-frame::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-frame::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-frame::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+.scrollbar-frame::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.22);
 }

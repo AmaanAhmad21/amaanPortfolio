@@ -1,13 +1,16 @@
+"use client";
+
+import { PortfolioFrame } from "@/components/layout/PortfolioFrame";
+
 export default function Experience() {
   return (
-    <div className="mx-auto max-w-4xl px-6 py-24">
-      <h1 className="font-heading text-5xl md:text-6xl tracking-wide text-[var(--text)] mb-12">
+    <PortfolioFrame>
+      <h2 className="font-heading text-2xl md:text-3xl tracking-wide text-[var(--text)] mb-8">
         Experience
-      </h1>
-
-      <div className="space-y-16">
+      </h2>
+      <div className="space-y-14">
         <section>
-          <h2 className="font-heading text-xl md:text-2xl tracking-wide text-[var(--text-muted)] mb-6">Work</h2>
+          <h3 className="font-heading text-lg md:text-xl tracking-wide text-[var(--text-muted)] mb-6">Work</h3>
           <ul className="space-y-10">
             <li>
               <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
@@ -32,9 +35,8 @@ export default function Experience() {
             </li>
           </ul>
         </section>
-
         <section>
-          <h2 className="font-heading text-xl md:text-2xl tracking-wide text-[var(--text-muted)] mb-6">Projects</h2>
+          <h3 className="font-heading text-lg md:text-xl tracking-wide text-[var(--text-muted)] mb-6">Projects</h3>
           <ul className="space-y-10">
             <li>
               <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
@@ -58,6 +60,6 @@ export default function Experience() {
           </ul>
         </section>
       </div>
-    </div>
+    </PortfolioFrame>
   );
 }
