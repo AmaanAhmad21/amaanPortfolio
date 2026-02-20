@@ -1,12 +1,9 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { LightningBackground } from "@/components/home/LightningBackground";
-import { LightningBolt } from "@/components/home/LightningBolt";
 import { ContactIcons } from "@/components/home/ContactIcons";
-
-type Strike = { href: string; x: number; y: number } | null;
 
 const nav = [
   { href: "/", label: "Home" },
@@ -21,23 +18,12 @@ type PortfolioFrameProps = {
 export function PortfolioFrame({ children }: PortfolioFrameProps) {
   const router = useRouter();
   const pathname = usePathname();
-  const [strike, setStrike] = useState<Strike>(null);
-  const [flash, setFlash] = useState(false);
 
-  const handleStrikeClick = useCallback(
+  const handleNavClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
       if (href === pathname) return;
       e.preventDefault();
-      const rect = e.currentTarget.getBoundingClientRect();
-      const x = (rect.left + rect.width / 2) / window.innerWidth * 100;
-      const y = (rect.top + rect.height / 2) / window.innerHeight * 100;
-      setStrike({ href, x, y });
-      setFlash(true);
-      setTimeout(() => setFlash(false), 520);
-      setTimeout(() => {
-        router.push(href);
-        setStrike(null);
-      }, 480);
+      router.push(href);
     },
     [router, pathname]
   );
@@ -45,15 +31,6 @@ export function PortfolioFrame({ children }: PortfolioFrameProps) {
   return (
     <div className="fixed inset-0 z-50 bg-[var(--bg)] overflow-hidden">
       <LightningBackground />
-
-      {flash && (
-        <div
-          className="fixed inset-0 z-[60] pointer-events-none animate-screen-flash"
-          style={{ backgroundColor: "var(--flash)" }}
-        />
-      )}
-
-      <LightningBolt targetX={strike?.x ?? 50} targetY={strike?.y ?? 50} visible={strike !== null} />
 
       <div className="absolute inset-4 md:inset-8 z-10 flex flex-col">
         <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -85,7 +62,7 @@ export function PortfolioFrame({ children }: PortfolioFrameProps) {
                 <a
                   key={href}
                   href={href}
-                  onClick={(e) => handleStrikeClick(e, href)}
+                  onClick={(e) => handleNavClick(e, href)}
                   className={`font-heading text-lg md:text-xl transition-colors tracking-wide ${
                     href === pathname
                       ? "text-[var(--text)]"
