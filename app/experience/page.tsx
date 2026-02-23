@@ -1,64 +1,131 @@
 "use client";
 
+import Link from "next/link";
 import { PortfolioFrame } from "@/components/layout/PortfolioFrame";
+import { projects } from "@/data/projects";
+
+const LINKEDIN_PROFILE = "https://www.linkedin.com/in/amaan-ahmad-0260a524b";
+
+const work = [
+  {
+    company: "T42",
+    title: "AI Developer Intern",
+    period: "May – Sept 2025",
+    location: "Remote",
+    description: "Data-wrangling agent with OpenAI Agents SDK; 100+ functions optimized, ~65% less manual preprocessing. Fine-tuned Hugging Face models for natural-language → SQL/BigQuery.",
+    linkedin: LINKEDIN_PROFILE,
+  },
+  {
+    company: "Western Quantum Club",
+    title: "Director of Software Education",
+    period: "Oct 2025 – Present",
+    location: "London, ON",
+    description: "Creating and leading workshops on quantum software and Qiskit. Supporting project-based learning and making quantum computing more accessible.",
+    linkedin: "https://www.linkedin.com/company/western-engineering-quantum-club",
+  },
+  {
+    company: "Deloitte",
+    title: "Cyber Security Intern",
+    period: "July – Aug 2024",
+    location: "Abu Dhabi, UAE",
+    description: "Emerging Tech Team. OT and cybersecurity modernization, client proposals, stakeholder presentations.",
+    linkedin: "https://www.linkedin.com/company/deloitte",
+  },
+  {
+    company: "Thryve",
+    title: "Software Engineer",
+    period: "Mar – May 2025",
+    location: "Remote",
+    description: "Software engineering and technical development.",
+    linkedin: "https://www.linkedin.com/company/thryvee",
+  },
+  {
+    company: "OrientMCT",
+    title: "Business Productivity Intern",
+    period: "May – July 2024",
+    location: "Abu Dhabi, UAE",
+    description: "PowerApps prototypes, SharePoint and Microsoft Lists; ~40% less manual data entry.",
+    linkedin: "https://www.linkedin.com/company/orientmct",
+  },
+];
+
+function LinkIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+      <polyline points="15 3 21 3 21 9" />
+      <line x1="10" y1="14" x2="21" y2="3" />
+    </svg>
+  );
+}
 
 export default function Experience() {
   return (
     <PortfolioFrame>
-      <h2 className="font-heading text-2xl md:text-3xl tracking-wide text-[var(--text)] mb-8">
-        Experience
-      </h2>
-      <div className="space-y-14">
-        <section>
-          <h3 className="font-heading text-lg md:text-xl tracking-wide text-[var(--text-muted)] mb-6">Work</h3>
-          <ul className="space-y-10">
-            <li>
-              <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
-                <span className="font-medium text-[var(--text)]">T42</span>
-                <span className="text-base text-[var(--text-muted)]">May – Sept 2025 · AI Developer Intern</span>
+      <div className="pl-6 md:pl-10 pr-6 md:pr-10 h-full flex flex-col min-h-0">
+        <h2 className="font-heading text-3xl md:text-4xl tracking-wide text-[var(--text)] shrink-0 mb-6 md:mb-8">
+          Experience
+        </h2>
+
+        <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 min-h-0">
+          {/* Work section - scrollable */}
+          <section className="flex flex-col min-h-0">
+            <h3 className="font-heading text-xl md:text-2xl tracking-wide text-[var(--text)] mb-4 shrink-0">
+            Work
+            </h3>
+            <div className="space-y-6 overflow-y-auto pr-2 scrollbar-frame min-h-0 flex-1">
+            {work.map((item, i) => (
+              <div
+                key={`${item.company}-${item.title}`}
+                className="opacity-0 animate-fade-in-up"
+                style={{ animationDelay: `${80 + i * 60}ms` }}
+              >
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="font-heading text-lg text-[var(--text)]">{item.company}</span>
+                  <a
+                    href={item.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[var(--text-muted)] hover:text-[var(--lightning)] transition-colors shrink-0"
+                    aria-label={`View ${item.company} on LinkedIn`}
+                  >
+                    <LinkIcon className="w-4 h-4" />
+                  </a>
+                </div>
+                <span className="text-sm text-[var(--text-muted)]">{item.period} · {item.title}</span>
+                <p className="text-[var(--text-muted)] text-sm md:text-base leading-relaxed mt-2">{item.description}</p>
+                {item.location && <p className="text-xs text-[var(--text-muted)] mt-1 opacity-80">{item.location}</p>}
               </div>
-              <p className="text-base md:text-lg text-[var(--text-muted)]">Data-wrangling agent with OpenAI Agents SDK; 100+ functions optimized, ~65% less manual preprocessing. Fine-tuned Hugging Face models for natural-language → SQL/BigQuery. Remote.</p>
-            </li>
-            <li>
-              <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
-                <span className="font-medium text-[var(--text)]">Deloitte</span>
-                <span className="text-base text-[var(--text-muted)]">July – Aug 2024 · Cyber Security Intern</span>
-              </div>
-              <p className="text-base md:text-lg text-[var(--text-muted)]">Emerging Tech Team, Abu Dhabi. OT and cybersecurity modernization, client proposals, stakeholder presentations.</p>
-            </li>
-            <li>
-              <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
-                <span className="font-medium text-[var(--text)]">OrientMCT</span>
-                <span className="text-base text-[var(--text-muted)]">May – July 2024 · Business Productivity Intern</span>
-              </div>
-              <p className="text-base md:text-lg text-[var(--text-muted)]">PowerApps prototypes, SharePoint and Microsoft Lists; ~40% less manual data entry. Abu Dhabi.</p>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h3 className="font-heading text-lg md:text-xl tracking-wide text-[var(--text-muted)] mb-6">Projects</h3>
-          <ul className="space-y-10">
-            <li>
-              <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
-                <span className="font-medium text-[var(--text)]">WQC Quantum Computing Hackathon</span>
-                <span className="text-base text-[var(--text-muted)]">1st place</span>
-              </div>
-              <p className="text-base md:text-lg text-[var(--text-muted)]">R-based quantum optimization for Toronto Tangerine bike redistribution; ~20% better station utilization.</p>
-            </li>
-            <li>
-              <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
-                <span className="font-medium text-[var(--text)]">Spotify Wrapped Stats Analyzer</span>
-              </div>
-              <p className="text-base md:text-lg text-[var(--text-muted)]">Full-stack Flask app: Spotify API, playback analytics, caching, ChatGPT for summaries and recommendations.</p>
-            </li>
-            <li>
-              <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
-                <span className="font-medium text-[var(--text)]">Thermal Detection for Autonomous Vehicle Safety</span>
-              </div>
-              <p className="text-base md:text-lg text-[var(--text-muted)]">Python, OpenCV, YOLO on thermal video; 90%+ accuracy. Deployed on Raspberry Pi 5 for embedded inference.</p>
-            </li>
-          </ul>
-        </section>
+            ))}
+            </div>
+          </section>
+
+          {/* Projects section - scrollable */}
+          <section className="flex flex-col min-h-0">
+            <h3 className="font-heading text-xl md:text-2xl tracking-wide text-[var(--text)] mb-4 shrink-0">
+            Projects
+            </h3>
+            <div className="space-y-6 overflow-y-auto pr-2 scrollbar-frame min-h-0 flex-1">
+            {projects.map((item, i) => (
+              <Link
+                key={item.slug}
+                href={`/projects/${item.slug}`}
+                className="block p-4 rounded-lg border border-[var(--border)] hover:border-[var(--lightning)] hover:bg-[var(--surface)]/50 transition-all duration-300 opacity-0 animate-fade-in-up group"
+                style={{ animationDelay: `${400 + i * 80}ms` }}
+              >
+                <div className="flex items-start justify-between gap-2 mb-2">
+                  <span className="font-heading text-lg text-[var(--text)] group-hover:text-[var(--lightning)] transition-colors">
+                    {item.name}
+                  </span>
+                  <span className="text-[var(--text-muted)] group-hover:text-[var(--lightning)] transition-colors shrink-0">→</span>
+                </div>
+                {item.badge && <span className="text-sm text-[var(--lightning)] mb-2 block">{item.badge}</span>}
+                <p className="text-[var(--text-muted)] text-sm leading-relaxed">{item.description}</p>
+              </Link>
+            ))}
+            </div>
+          </section>
+        </div>
       </div>
     </PortfolioFrame>
   );

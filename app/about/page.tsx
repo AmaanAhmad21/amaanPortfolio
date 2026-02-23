@@ -6,14 +6,15 @@ import { PortfolioFrame } from "@/components/layout/PortfolioFrame";
 export default function About() {
   return (
     <PortfolioFrame>
-      <h2 className="font-heading text-3xl md:text-4xl tracking-wide text-[var(--text)] mb-6 md:mb-8">
-        About
-      </h2>
+      <div className="pl-6 md:pl-10 max-w-5xl mx-auto">
+        <h2 className="font-heading text-3xl md:text-4xl tracking-wide text-[var(--text)] mb-4 md:mb-5">
+          About
+        </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-6 max-w-5xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-6">
         {/* School */}
-        <section className="flex flex-col items-center md:items-start gap-3">
-          <div className="w-28 h-28 md:w-32 md:h-32 relative rounded-lg overflow-hidden shrink-0">
+        <section className="flex flex-col items-center md:items-start gap-3 opacity-0 animate-fade-in-up">
+          <div className="w-40 h-40 md:w-48 md:h-48 relative rounded-lg overflow-hidden shrink-0 transition-transform duration-300 hover:scale-105">
             <Image
               src="/images/WesternLogo.png"
               alt="Western University"
@@ -35,8 +36,8 @@ export default function About() {
         </section>
 
         {/* Powerlifting */}
-        <section className="flex flex-col items-center md:items-start gap-3">
-          <div className="w-28 h-28 md:w-32 md:h-32 relative rounded-lg overflow-hidden shrink-0">
+        <section className="flex flex-col items-center md:items-start gap-3 opacity-0 animate-fade-in-up" style={{ animationDelay: "120ms" }}>
+          <div className="w-40 h-40 md:w-48 md:h-48 relative rounded-lg overflow-hidden shrink-0 transition-transform duration-300 hover:scale-105">
             <Image
               src="/images/powerlifting.jpeg"
               alt="Powerlifting"
@@ -61,13 +62,13 @@ export default function About() {
         </section>
 
         {/* Formula 1 */}
-        <section className="flex flex-col items-center md:items-start gap-3">
-          <div className="w-28 h-28 md:w-32 md:h-32 relative rounded-lg overflow-hidden shrink-0">
+        <section className="flex flex-col items-center md:items-start gap-3 opacity-0 animate-fade-in-up" style={{ animationDelay: "240ms" }}>
+          <div className="w-40 h-40 md:w-48 md:h-48 relative rounded-lg overflow-hidden shrink-0 transition-transform duration-300 hover:scale-105">
             <Image
               src="/images/ferrariImg.png"
               alt="Ferrari"
               fill
-              className="object-cover object-center scale-125"
+              className="object-cover object-center"
             />
           </div>
           <div className="text-center md:text-left">
@@ -85,6 +86,7 @@ export default function About() {
             </p>
           </div>
         </section>
+        </div>
       </div>
     </PortfolioFrame>
   );

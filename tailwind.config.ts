@@ -66,6 +66,10 @@ const config: Config = {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
         },
+        fadeInUp: {
+          "0%": { opacity: "0", transform: "translateY(16px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out forwards",
@@ -77,6 +81,7 @@ const config: Config = {
         "electric-glow": "electricGlow 2.5s ease-in-out infinite",
         "electric-flicker": "electricFlicker 3s ease-in-out infinite",
         "spin-slow": "spinSlow 55s linear infinite",
+        "fade-in-up": "fadeInUp 0.6s ease-out forwards",
       },
     },
   },

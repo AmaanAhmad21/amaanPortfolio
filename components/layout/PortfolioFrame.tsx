@@ -76,13 +76,13 @@ export function PortfolioFrame({ children }: PortfolioFrameProps) {
           </div>
 
           {children != null && (
-            <div className="scrollbar-frame flex-1 min-h-0 overflow-y-auto overflow-x-hidden mt-8 md:mt-0 -mr-6 md:-mr-10 pr-3">
+            <div className={`scrollbar-frame flex-1 min-h-0 overflow-x-hidden mt-8 md:mt-0 -mr-6 md:-mr-10 pr-3 ${pathname === "/about" || pathname === "/experience" ? "overflow-hidden" : "overflow-y-auto"}`}>
               {children}
             </div>
           )}
         </div>
 
-        <div className="absolute bottom-6 md:bottom-10 right-6 md:right-10">
+        <div className="absolute bottom-3 md:bottom-4 right-3 md:right-4">
           <ContactIcons />
         </div>
 
@@ -92,7 +92,7 @@ export function PortfolioFrame({ children }: PortfolioFrameProps) {
           </span>
         </div>
 
-        <div className="absolute bottom-6 md:bottom-10 left-6 md:left-10 flex items-center gap-2">
+        <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 flex items-center gap-2">
           <svg className="w-5 h-5 shrink-0 text-[var(--text-muted)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
             <circle cx="12" cy="10" r="3" />
