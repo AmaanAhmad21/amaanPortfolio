@@ -2,7 +2,6 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { useCallback } from "react";
-import { LightningBackground } from "@/components/home/LightningBackground";
 import { ContactIcons } from "@/components/home/ContactIcons";
 
 const nav = [
@@ -29,8 +28,7 @@ export function PortfolioFrame({ children }: PortfolioFrameProps) {
   );
 
   return (
-    <div className="fixed inset-0 z-50 bg-[var(--bg)] overflow-hidden">
-      <LightningBackground />
+    <div className="fixed inset-0 z-50 overflow-hidden">
 
       <div className="absolute inset-4 md:inset-8 z-10 flex flex-col">
         <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">

@@ -70,6 +70,33 @@ const config: Config = {
           "0%": { opacity: "0", transform: "translateY(16px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        galaxyDriftSlow: {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "25%": { transform: "translate(2%, 1%) scale(1.02)" },
+          "50%": { transform: "translate(-1%, 2%) scale(0.98)" },
+          "75%": { transform: "translate(-2%, -1%) scale(1.01)" },
+        },
+        galaxyDriftMedium: {
+          "0%, 100%": { transform: "translate(0, 0)" },
+          "33%": { transform: "translate(-3%, 2%)" },
+          "66%": { transform: "translate(2%, -2%)" },
+        },
+        starFlow: {
+          "0%": { backgroundPosition: "0% 0%" },
+          "100%": { backgroundPosition: "200% 200%" },
+        },
+        starFlowReverse: {
+          "0%": { backgroundPosition: "200% 0%" },
+          "100%": { backgroundPosition: "0% 200%" },
+        },
+        passByRightToLeft: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        passByLeftToRight: {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0)" },
+        },
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out forwards",
@@ -82,6 +109,12 @@ const config: Config = {
         "electric-flicker": "electricFlicker 3s ease-in-out infinite",
         "spin-slow": "spinSlow 55s linear infinite",
         "fade-in-up": "fadeInUp 0.6s ease-out forwards",
+        "galaxy-drift-slow": "galaxyDriftSlow 22s ease-in-out infinite",
+        "galaxy-drift-medium": "galaxyDriftMedium 28s ease-in-out infinite",
+        "star-flow": "starFlow 65s linear infinite",
+        "star-flow-reverse": "starFlowReverse 58s linear infinite",
+        "pass-by-right-to-left": "passByRightToLeft 36s linear infinite",
+        "pass-by-left-to-right": "passByLeftToRight 40s linear infinite",
       },
     },
   },

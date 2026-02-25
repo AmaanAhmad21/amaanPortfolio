@@ -7,46 +7,11 @@ import { projects } from "@/data/projects";
 const LINKEDIN_PROFILE = "https://www.linkedin.com/in/amaan-ahmad-0260a524b";
 
 const work = [
-  {
-    company: "T42",
-    title: "AI Developer Intern",
-    period: "May – Sept 2025",
-    location: "Remote",
-    description: "Data-wrangling agent with OpenAI Agents SDK; 100+ functions optimized, ~65% less manual preprocessing. Fine-tuned Hugging Face models for natural-language → SQL/BigQuery.",
-    linkedin: LINKEDIN_PROFILE,
-  },
-  {
-    company: "Western Quantum Club",
-    title: "Director of Software Education",
-    period: "Oct 2025 – Present",
-    location: "London, ON",
-    description: "Creating and leading workshops on quantum software and Qiskit. Supporting project-based learning and making quantum computing more accessible.",
-    linkedin: "https://www.linkedin.com/company/western-engineering-quantum-club",
-  },
-  {
-    company: "Deloitte",
-    title: "Cyber Security Intern",
-    period: "July – Aug 2024",
-    location: "Abu Dhabi, UAE",
-    description: "Emerging Tech Team. OT and cybersecurity modernization, client proposals, stakeholder presentations.",
-    linkedin: "https://www.linkedin.com/company/deloitte",
-  },
-  {
-    company: "Thryve",
-    title: "Software Engineer",
-    period: "Mar – May 2025",
-    location: "Remote",
-    description: "Software engineering and technical development.",
-    linkedin: "https://www.linkedin.com/company/thryvee",
-  },
-  {
-    company: "OrientMCT",
-    title: "Business Productivity Intern",
-    period: "May – July 2024",
-    location: "Abu Dhabi, UAE",
-    description: "PowerApps prototypes, SharePoint and Microsoft Lists; ~40% less manual data entry.",
-    linkedin: "https://www.linkedin.com/company/orientmct",
-  },
+  { company: "T42", title: "AI Developer Intern", period: "May – Sept 2025", linkedin: LINKEDIN_PROFILE },
+  { company: "Western Quantum Club", title: "Director of Software Education", period: "Oct 2025 – Present", linkedin: "https://www.linkedin.com/company/western-engineering-quantum-club" },
+  { company: "Deloitte", title: "Cyber Security Intern", period: "July – Aug 2024", linkedin: "https://www.linkedin.com/company/deloitte" },
+  { company: "Thryve", title: "Software Engineer", period: "Mar – May 2025", linkedin: "https://www.linkedin.com/company/thryvee" },
+  { company: "OrientMCT", title: "Business Productivity Intern", period: "May – July 2024", linkedin: "https://www.linkedin.com/company/orientmct" },
 ];
 
 function LinkIcon({ className }: { className?: string }) {
@@ -67,62 +32,59 @@ export default function Experience() {
           Experience
         </h2>
 
-        <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 min-h-0">
-          {/* Work section - scrollable */}
-          <section className="flex flex-col min-h-0">
-            <h3 className="font-heading text-xl md:text-2xl tracking-wide text-[var(--text)] mb-4 shrink-0">
-            Work
+        <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 min-h-0 overflow-hidden">
+          {/* Work section */}
+          <section className="flex flex-col min-h-0 overflow-hidden">
+            <h3 className="font-heading text-xl md:text-2xl tracking-wide text-[var(--text)] mb-5 shrink-0">
+              Work
             </h3>
-            <div className="space-y-6 overflow-y-auto pr-2 scrollbar-frame min-h-0 flex-1">
-            {work.map((item, i) => (
-              <div
-                key={`${item.company}-${item.title}`}
-                className="opacity-0 animate-fade-in-up"
-                style={{ animationDelay: `${80 + i * 60}ms` }}
-              >
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="font-heading text-lg text-[var(--text)]">{item.company}</span>
-                  <a
-                    href={item.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[var(--text-muted)] hover:text-[var(--lightning)] transition-colors shrink-0"
-                    aria-label={`View ${item.company} on LinkedIn`}
-                  >
-                    <LinkIcon className="w-4 h-4" />
-                  </a>
+            <div className="flex-1 flex flex-col justify-evenly min-h-0 gap-2">
+              {work.map((item, i) => (
+                <div
+                  key={`${item.company}-${item.title}`}
+                  className="opacity-0 animate-fade-in-up py-1"
+                  style={{ animationDelay: `${80 + i * 60}ms` }}
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="font-heading text-lg md:text-xl text-[var(--text)]">{item.company}</span>
+                    <a
+                      href={item.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[var(--text-muted)] hover:text-[var(--lightning)] transition-colors shrink-0"
+                      aria-label={`View ${item.company} on LinkedIn`}
+                    >
+                      <LinkIcon className="w-4 h-4" />
+                    </a>
+                  </div>
+                  <span className="text-sm text-[var(--text-muted)]">{item.period} · {item.title}</span>
                 </div>
-                <span className="text-sm text-[var(--text-muted)]">{item.period} · {item.title}</span>
-                <p className="text-[var(--text-muted)] text-sm md:text-base leading-relaxed mt-2">{item.description}</p>
-                {item.location && <p className="text-xs text-[var(--text-muted)] mt-1 opacity-80">{item.location}</p>}
-              </div>
-            ))}
+              ))}
             </div>
           </section>
 
-          {/* Projects section - scrollable */}
-          <section className="flex flex-col min-h-0">
-            <h3 className="font-heading text-xl md:text-2xl tracking-wide text-[var(--text)] mb-4 shrink-0">
-            Projects
+          {/* Projects section */}
+          <section className="flex flex-col min-h-0 overflow-hidden">
+            <h3 className="font-heading text-xl md:text-2xl tracking-wide text-[var(--text)] mb-5 shrink-0">
+              Projects
             </h3>
-            <div className="space-y-6 overflow-y-auto pr-2 scrollbar-frame min-h-0 flex-1">
-            {projects.map((item, i) => (
-              <Link
-                key={item.slug}
-                href={`/projects/${item.slug}`}
-                className="block p-4 rounded-lg border border-[var(--border)] hover:border-[var(--lightning)] hover:bg-[var(--surface)]/50 transition-all duration-300 opacity-0 animate-fade-in-up group"
-                style={{ animationDelay: `${400 + i * 80}ms` }}
-              >
-                <div className="flex items-start justify-between gap-2 mb-2">
-                  <span className="font-heading text-lg text-[var(--text)] group-hover:text-[var(--lightning)] transition-colors">
-                    {item.name}
-                  </span>
-                  <span className="text-[var(--text-muted)] group-hover:text-[var(--lightning)] transition-colors shrink-0">→</span>
-                </div>
-                {item.badge && <span className="text-sm text-[var(--lightning)] mb-2 block">{item.badge}</span>}
-                <p className="text-[var(--text-muted)] text-sm leading-relaxed">{item.description}</p>
-              </Link>
-            ))}
+            <div className="flex-1 flex flex-col justify-evenly min-h-0 gap-2">
+              {projects.map((item, i) => (
+                <Link
+                  key={item.slug}
+                  href={`/projects/${item.slug}`}
+                  className="block p-4 md:p-5 rounded-lg border border-[var(--border)] hover:border-[var(--lightning)] hover:bg-[var(--surface)]/50 transition-all duration-300 opacity-0 animate-fade-in-up group"
+                  style={{ animationDelay: `${400 + i * 80}ms` }}
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <span className="font-heading text-lg md:text-xl text-[var(--text)] group-hover:text-[var(--lightning)] transition-colors">
+                      {item.name}
+                    </span>
+                    <span className="text-[var(--text-muted)] group-hover:text-[var(--lightning)] transition-colors shrink-0">→</span>
+                  </div>
+                  {item.badge && <span className="text-sm text-[var(--lightning)] mt-1 block">{item.badge}</span>}
+                </Link>
+              ))}
             </div>
           </section>
         </div>
