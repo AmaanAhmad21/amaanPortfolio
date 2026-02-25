@@ -61,10 +61,10 @@ export function PortfolioFrame({ children }: PortfolioFrameProps) {
                   key={href}
                   href={href}
                   onClick={(e) => handleNavClick(e, href)}
-                  className={`font-heading text-lg md:text-xl transition-colors tracking-wide ${
+                  className={`font-heading text-lg md:text-xl transition-colors tracking-wide cursor-pointer ${
                     href === pathname
-                      ? "text-[var(--text)]"
-                      : "text-[var(--text-muted)] hover:text-[var(--lightning)] cursor-pointer"
+                      ? "text-[var(--text)] [text-shadow:0_0_6px_color-mix(in_srgb,var(--lightning)_35%,transparent),0_0_10px_color-mix(in_srgb,var(--lightning)_25%,transparent)]"
+                      : "text-[var(--text-muted)] hover:text-[var(--lightning)]"
                   }`}
                 >
                   {label}
