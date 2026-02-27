@@ -10,6 +10,10 @@ coverage
 .next/
 out/
 
+# preview / build output
+preview/
+nul
+
 # misc
 .DS_Store
 *.pem

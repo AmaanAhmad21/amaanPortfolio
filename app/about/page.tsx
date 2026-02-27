@@ -48,8 +48,8 @@ export default function About() {
             </div>
             {/* Straight arrow from photo to text (behind photo so hover scale hides it) */}
             <svg
-              className="absolute left-full top-[4%] z-0 w-[44px] h-[28px] md:w-[48px] md:h-[30px] text-[var(--text-muted)]"
-              style={{ filter: "opacity(0.85)" }}
+              className="absolute left-full top-[4%] z-0 w-[44px] h-[28px] md:w-[48px] md:h-[30px] text-[var(--text-muted)] opacity-0 animate-fade-in-up"
+              style={{ filter: "opacity(0.85)", animationDelay: "550ms" }}
               viewBox="0 0 44 28"
               fill="none"
               stroke="currentColor"
@@ -74,7 +74,7 @@ export default function About() {
                 </marker>
               </defs>
             </svg>
-            <span className="absolute left-full top-3 z-0 -translate-y-full -mt-1 md:-mt-1.5 text-xs text-[var(--text-muted)] italic whitespace-nowrap pl-[38px] md:pl-[42px]">
+            <span className="absolute left-full top-0 z-0 -translate-y-full -mt-1 md:-mt-1.5 text-xs text-[var(--text-muted)] italic whitespace-nowrap pl-[38px] md:pl-[42px] opacity-0 animate-fade-in-up" style={{ animationDelay: "550ms" }}>
               (this is me btw)
             </span>
           </div>
