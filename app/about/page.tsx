@@ -27,7 +27,7 @@ export default function About() {
               School
             </h3>
             <p className="text-[var(--text-muted)] leading-relaxed text-sm md:text-base mb-2">
-              I’m studying Computer Science at Western University. I’m interested in AI, data systems, and full-stack development — building things that are structured and actually useful.
+              I’m studying Computer Science at Western University. I’m particularly interested in AI, specifically agentic AI and anything development-related.
             </p>
             <p className="text-[var(--text-muted)] leading-relaxed text-sm md:text-base">
               B.Sc. in Computer Science, Minor in Software Engineering. Class of 2026.
@@ -37,26 +37,61 @@ export default function About() {
 
         {/* Powerlifting */}
         <section className="flex flex-col items-center md:items-start gap-3 opacity-0 animate-fade-in-up" style={{ animationDelay: "120ms" }}>
-          <div className="w-40 h-40 md:w-48 md:h-48 relative rounded-lg overflow-hidden shrink-0 transition-transform duration-300 hover:scale-105">
-            <Image
-              src="/images/powerlifting.jpeg"
-              alt="Powerlifting"
-              fill
-              className="object-cover"
-            />
+          <div className="relative shrink-0">
+            <div className="relative z-10 w-40 h-40 md:w-48 md:h-48 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <Image
+                src="/images/powerlifting.jpeg"
+                alt="Powerlifting"
+                fill
+                className="object-cover"
+              />
+            </div>
+            {/* Straight arrow from photo to text (behind photo so hover scale hides it) */}
+            <svg
+              className="absolute left-full top-[4%] z-0 w-[44px] h-[28px] md:w-[48px] md:h-[30px] text-[var(--text-muted)]"
+              style={{ filter: "opacity(0.85)" }}
+              viewBox="0 0 44 28"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.2"
+              strokeLinecap="round"
+              aria-hidden
+            >
+              <path
+                d="M 0 20 L 40 0"
+                markerEnd="url(#powerlifting-arrow)"
+              />
+              <defs>
+                <marker
+                  id="powerlifting-arrow"
+                  markerWidth="6"
+                  markerHeight="6"
+                  refX="4"
+                  refY="3"
+                  orient="auto"
+                >
+                  <path d="M 0 0 L 6 3 L 0 6 Z" fill="currentColor" />
+                </marker>
+              </defs>
+            </svg>
+            <span className="absolute left-full top-3 z-0 -translate-y-full -mt-1 md:-mt-1.5 text-xs text-[var(--text-muted)] italic whitespace-nowrap pl-[38px] md:pl-[42px]">
+              (this is me btw)
+            </span>
           </div>
           <div className="text-center md:text-left">
             <h3 className="font-heading text-xl md:text-2xl tracking-wide text-[var(--text)] mb-2">
               Powerlifting
             </h3>
             <p className="text-[var(--text-muted)] leading-relaxed text-sm md:text-base mb-2">
-              I train consistently. Powerlifting keeps things simple: show up, lift, track progress.
+              I train powerlifting.
             </p>
             <p className="text-[var(--text-muted)] leading-relaxed text-sm md:text-base mb-2">
-              Strength doesn’t come quickly. It builds over time — through repetition, patience, and small improvements.
+              It’s simple: show up, lift heavy things, repeat. Progress is slow, numbers go up (eventually), and your ego gets checked regularly.
             </p>
             <p className="text-[var(--text-muted)] leading-relaxed text-sm md:text-base">
               Squat. Bench. Deadlift.
+              <br />
+              No shortcuts. Unfortunately.
             </p>
           </div>
         </section>
@@ -79,10 +114,13 @@ export default function About() {
               I follow Formula 1 and support Ferrari.
             </p>
             <p className="text-[var(--text-muted)] leading-relaxed text-sm md:text-base mb-2">
-              I’m drawn to the speed, the strategy, and the pressure. Race weekends are intense — small decisions matter, and margins are thin.
+              It’s a character-building experience.
+            </p>
+            <p className="text-[var(--text-muted)] leading-relaxed text-sm md:text-base mb-2">
+              Every race weekend starts with hope and ends with “next year.” Still, I watch every session. Loyalty is a commitment.
             </p>
             <p className="text-[var(--text-muted)] leading-relaxed text-sm md:text-base">
-              Forza Ferrari.
+              Forza Ferrari. Always.
             </p>
           </div>
         </section>

@@ -32,7 +32,7 @@ export default function Experience() {
           Experience
         </h2>
 
-        <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 min-h-0 overflow-hidden">
+        <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 min-h-0 overflow-hidden">
           {/* Work section */}
           <section className="flex flex-col min-h-0 overflow-hidden">
             <h3 className="font-heading text-xl md:text-2xl tracking-wide text-[var(--text)] mb-5 shrink-0">
