@@ -80,7 +80,19 @@ export function PortfolioFrame({ children }: PortfolioFrameProps) {
           )}
         </div>
 
-        <div className="absolute bottom-3 md:bottom-4 right-3 md:right-4">
+        <div className="absolute bottom-2 md:bottom-3 right-3 md:right-4 flex flex-col items-end gap-3 md:gap-4">
+          <a
+            href="/Amaan_Ahmad_Resume.pdf"
+            download
+            className="inline-flex items-center gap-2 font-heading text-base md:text-lg text-[var(--text-muted)] hover:text-[var(--lightning)] transition-colors tracking-wide cursor-pointer"
+          >
+            <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Download resume
+          </a>
           <ContactIcons />
         </div>
 
