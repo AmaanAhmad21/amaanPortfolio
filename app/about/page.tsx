@@ -117,10 +117,10 @@ export default function About() {
               It’s a character-building experience.
             </p>
             <p className="text-[var(--text-muted)] leading-relaxed text-sm md:text-base mb-2">
-              Every race weekend starts with hope and ends with “next year.” Still, I watch every session. Loyalty is a commitment.
+              Every race weekend starts with hope and ends with “next year.” Still, I watch every race. Loyalty to Ferrari is a commitment.
             </p>
             <p className="text-[var(--text-muted)] leading-relaxed text-sm md:text-base">
-              Forza Ferrari. Always.
+              Forza Ferrari.
             </p>
           </div>
         </section>

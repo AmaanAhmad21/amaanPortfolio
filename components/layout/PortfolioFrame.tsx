@@ -80,7 +80,7 @@ export function PortfolioFrame({ children }: PortfolioFrameProps) {
           )}
         </div>
 
-        <div className="absolute bottom-2 md:bottom-3 right-3 md:right-4 flex flex-col items-end gap-3 md:gap-4">
+        <div className="absolute bottom-2 md:bottom-3 right-3 md:right-4 flex flex-col items-end gap-4">
           <a
             href="/Amaan_Ahmad_Resume.pdf"
             download
