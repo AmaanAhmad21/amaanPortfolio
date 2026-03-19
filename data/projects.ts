@@ -17,6 +17,7 @@ export const projects = [
     name: "Spotify Wrapped Stats Analyzer",
     description: "Full-stack Flask app: Spotify API, playback analytics, caching, ChatGPT for summaries and recommendations.",
     github: "https://github.com/AmaanAhmad21/SpotifyWrappedProj",
+    live: "https://viberewind.onrender.com/",
     details: [
       "Developed full-stack Flask web application replicating Spotify Wrapped",
       "Visualized users' top songs and artists over different time periods",

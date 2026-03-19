@@ -55,6 +55,16 @@ export default function ProjectPage() {
               View on GitHub →
             </a>
           )}
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--lightning)] hover:underline w-fit"
+            >
+              View Live Demo →
+            </a>
+          )}
           <a
             href="https://www.linkedin.com/in/amaan-ahmad-0260a524b/details/projects/"
             target="_blank"
